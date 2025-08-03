@@ -3,10 +3,8 @@ import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from '../../services/store';
 import {
   setSelectedIngredient,
-  clearSelectedIngredient,
-  fetchIngredients
+  clearSelectedIngredient
 } from '../../services/slices/ingredientsSlice';
-
 import { Preloader } from '../ui/preloader';
 import { IngredientDetailsUI } from '../ui/ingredient-details';
 
@@ -17,12 +15,6 @@ export const IngredientDetails: FC = () => {
   const { ingredients, selectedIngredient, loading } = useSelector(
     (state) => state.ingredients
   );
-
-  useEffect(() => {
-    if (!ingredients.length) {
-      dispatch(fetchIngredients());
-    }
-  }, [ingredients.length, dispatch]);
 
   useEffect(() => {
     if (ingredients.length && id) {

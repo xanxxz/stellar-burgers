@@ -5,7 +5,6 @@ import { Preloader } from '../ui/preloader';
 import { OrderInfoUI } from '../ui/order-info';
 import { TIngredient, TOrder } from '@utils-types';
 import { getOrderByNumberApi } from '../../utils/burger-api';
-import { fetchIngredients } from '../../services/slices/ingredientsSlice';
 
 export const OrderInfo: FC = () => {
   const { number } = useParams<{ number: string }>();
@@ -14,12 +13,6 @@ export const OrderInfo: FC = () => {
   const ingredients = useSelector((state) => state.ingredients.ingredients);
   const [orderData, setOrderData] = useState<TOrder | null>(null);
   const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    if (!ingredients.length) {
-      dispatch(fetchIngredients());
-    }
-  }, [dispatch, ingredients.length]);
 
   useEffect(() => {
     if (!number) return;

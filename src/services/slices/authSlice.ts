@@ -17,6 +17,7 @@ type TAuthState = {
   user: TUser | null;
   isLoading: boolean;
   isAuth: boolean;
+  checkedAuth: boolean;
   error: string | null;
 };
 
@@ -24,6 +25,7 @@ const initialState: TAuthState = {
   user: null,
   isLoading: false,
   isAuth: false,
+  checkedAuth: false,
   error: null
 };
 
@@ -172,11 +174,13 @@ const authSlice = createSlice({
         state.isAuth = true;
         state.user = action.payload.user;
         state.isLoading = false;
+        state.checkedAuth = true;
       })
       .addCase(checkUserAuth.rejected, (state) => {
         state.isAuth = false;
         state.user = null;
         state.isLoading = false;
+        state.checkedAuth = true;
       })
       .addCase(updateUser.pending, (state) => {
         state.isLoading = true;

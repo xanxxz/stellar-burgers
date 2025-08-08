@@ -1,0 +1,9 @@
+{
+  "success": true,
+  "accessToken": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4N2I3YWIyNWE1NGRmMDAxYjZkZjRlOSIsImlhdCI6MTc1NDU2NTQyOSwiZXhwIjoxNzU0NTY2NjI5fQ.gAbx3Tguui-ANi9FEAzTJv2YgU7PsKR4PhFqzVLZz4M",
+  "refreshToken": "0a348fc920c0f7b6cbd69cfa3679c485245939b8ba9335fe0504d84de806a057c6735cedaa60754a",
+  "user": {
+    "email": "xanax616@xan.ru",
+    "name": "xanxxz"
+  }
+}
